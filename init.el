@@ -20,7 +20,7 @@
 ;;theme
 
 (custom-set-variables
- '(custom-enabled-themes '(deeper-blue)))
+ '(custom-enabled-themes '(modus-vivendi))
  '(package-selected-packages '(magit)))
 
 (require 'package)
