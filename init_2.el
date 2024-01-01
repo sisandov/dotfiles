@@ -8,7 +8,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
-(set-fringe-mode 0)
+(set-fringe-mode 1)
 
 ;; font size
 
@@ -25,6 +25,10 @@
 ;; single buffer dired
 
 (setq dired-kill-when-opening-new-dired-buffer t)
+
+;; M-x
+
+(fido-vertical-mode)
 
 ;; packages
 
@@ -54,6 +58,8 @@
 (use-package magit)
 
 (use-package file-info)
+
+(use-package treemacs)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
