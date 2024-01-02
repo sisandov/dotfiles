@@ -28,7 +28,7 @@
 
 ;; M-x
 
-(fido-vertical-mode)
+(icomplete-vertical-mode)
 
 ;; packages
 
