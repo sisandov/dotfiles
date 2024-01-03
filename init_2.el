@@ -66,3 +66,4 @@
 (use-package treemacs)
 
 (use-package smartparens)
+(smartparens-global-mode t)
