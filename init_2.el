@@ -64,7 +64,5 @@
 (use-package file-info)
 
 (use-package treemacs)
-(custom-set-variables
- '(package-selected-packages '(file-info magit moe-theme)))
-(custom-set-faces
- )
+
+(use-package smartparens)
