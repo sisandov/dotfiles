@@ -30,6 +30,10 @@
 
 (icomplete-vertical-mode)
 
+;; better buffer list
+
+(global-set-key "\C-x\C-b" 'electric-buffer-list)
+
 ;; packages
 
 (require 'package)
