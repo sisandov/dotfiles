@@ -18,9 +18,17 @@
 
 (setq visible-bell t)
 
-;; move between windows with shift arrow keys
+;; move between windows - updated keybindings
 
-(windmove-default-keybindings)
+(global-set-key (kbd "C-M-k") 'windmove-left)
+(global-set-key (kbd "C-M-;") 'windmove-right)
+(global-set-key (kbd "C-M-o") 'windmove-up)
+(global-set-key (kbd "C-M-l") 'windmove-down)
+
+;; previous and next buffer bindings
+
+(global-set-key (kbd "<f1>") 'previous-buffer)
+(global-set-key (kbd "<f2>") 'next-buffer)
 
 ;; single buffer dired
 
