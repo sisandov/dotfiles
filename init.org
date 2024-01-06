@@ -1,0 +1,71 @@
+* repositories, packages
+#+begin_src emacs-lisp
+  (require 'package)
+
+  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			   ("org" . "https://orgmode.org/elpa/")
+			   ("elpa" . "https://elpa.gnu.org/packages/")))
+
+  (package-initialize)
+  (unless package-archive-contents
+    (package-refresh-contents))
+
+  ;; Initialize use-package on non-Linux platforms
+
+  (unless (package-installed-p 'use-package)
+    (package-install 'use-package))
+
+  (require 'use-package)
+  (setq use-package-always-ensure t)
+
+#+end_src
+* appearence
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (setq inhibit-startup-screen t)
+  (set-fringe-mode 1)
+  (use-package moe-theme)
+  (load-theme 'moe-light t)
+  (set-face-attribute 'default nil :height 130)
+#+end_src
+* QOL
+#+begin_src emacs-lisp
+  (setq dired-listing-switches "-aBhl --group-directories-first")
+  (setq visible-bell t)
+  (setq dired-kill-when-opening-new-dired-buffer t)
+  (icomplete-vertical-mode)
+#+end_src
+* bindings
+** windows
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-M-k") 'windmove-left)
+  (global-set-key (kbd "C-M-;") 'windmove-right)
+  (global-set-key (kbd "C-M-o") 'windmove-up)
+  (global-set-key (kbd "C-M-l") 'windmove-down)
+#+end_src
+** buffers
+#+begin_src emacs-lisp
+  (global-set-key (kbd "<f1>") 'previous-buffer)
+  (global-set-key (kbd "<f2>") 'next-buffer)
+#+end_src
+** electric buffer list
+#+begin_src emacs-lisp
+  (global-set-key "\C-x\C-b" 'electric-buffer-list)  
+#+end_src
+* some packages
+#+begin_src emacs-lisp
+  (use-package magit)
+
+  (use-package file-info)
+
+  (use-package treemacs)
+
+  (use-package smartparens)
+  (smartparens-global-mode t)
+#+end_src
+
+
+
+

@@ -1,31 +1,50 @@
-;; dired sorting flags
+(require 'package)
 
-(setq dired-listing-switches "-aBhl --group-directories-first")
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("org" . "https://orgmode.org/elpa/")
+			 ("elpa" . "https://elpa.gnu.org/packages/")))
 
-;; remove bars
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Initialize use-package on non-Linux platforms
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
 
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
-
-;; font size
-
+(set-fringe-mode 1)
+(use-package moe-theme)
+(load-theme 'moe-light t)
 (set-face-attribute 'default nil :height 130)
 
-;; move between windows with shift arrow keys
+(setq dired-listing-switches "-aBhl --group-directories-first")
+(setq visible-bell t)
+(setq dired-kill-when-opening-new-dired-buffer t)
+(icomplete-vertical-mode)
 
-(windmove-default-keybindings)
+(global-set-key (kbd "C-M-k") 'windmove-left)
+(global-set-key (kbd "C-M-;") 'windmove-right)
+(global-set-key (kbd "C-M-o") 'windmove-up)
+(global-set-key (kbd "C-M-l") 'windmove-down)
 
-;;theme
+(global-set-key (kbd "<f1>") 'previous-buffer)
+(global-set-key (kbd "<f2>") 'next-buffer)
 
-(custom-set-variables
- '(custom-enabled-themes '(modus-vivendi))
- '(package-selected-packages '(magit)))
+(global-set-key "\C-x\C-b" 'electric-buffer-list)
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+(use-package magit)
 
+(use-package file-info)
 
-;; this is a comment
+(use-package treemacs)
+
+(use-package smartparens)
+(smartparens-global-mode t)
