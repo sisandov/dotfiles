@@ -77,8 +77,7 @@
 
   (use-package smartparens)
   (smartparens-global-mode t)
+
+  (use-package aggressive-indent)
+  (global-aggressive-indent-mode 1)
 #+end_src
-
-
-
-
