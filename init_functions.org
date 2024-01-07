@@ -1,0 +1,17 @@
+* custom functions
+** select entire text block
+#+begin_src emacs-lisp :tangle yes
+  (defun custom-text-block-select ()
+    "select entire text block pointer is on"
+    (interactive)
+    (let ((initpoint (save-excursion (backward-paragraph) (progn (skip-chars-backward "\n[ \t]")) (next-line) (point)))
+	  (endpoint (save-excursion (forward-paragraph) (point))))
+      (set-mark initpoint)
+      (goto-char endpoint)))
+
+  (global-set-key (kbd "C-<") 'custom-text-block-select)
+  #+end_src
+
+  #+RESULTS:
+  : custom-text-block-select
+
