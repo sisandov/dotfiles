@@ -66,6 +66,7 @@
   (global-set-key (kbd "C-M-;") 'windmove-right)
   (global-set-key (kbd "C-M-o") 'windmove-up)
   (global-set-key (kbd "C-M-l") 'windmove-down)
+  (global-unset-key (kbd "C-x C-z"))
 #+end_src
 ** buffers
 #+begin_src emacs-lisp
