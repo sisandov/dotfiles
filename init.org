@@ -95,4 +95,6 @@
 
   (use-package aggressive-indent)
   (global-aggressive-indent-mode 1)
+
+  (use-package nov)
 #+end_src
