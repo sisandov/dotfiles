@@ -45,7 +45,7 @@
     (interactive)
     (let ((initpoint (save-excursion
 		       (move-beginning-of-line 1)
-		       (while (not (looking-at-p "\n"))
+		       (while (and (not (bobp)) (not (looking-at-p "\n")))
 			 (previous-line)
 			 (move-beginning-of-line 1))
 		       (while (and (looking-at-p "\n") (not (bobp)))
