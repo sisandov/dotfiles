@@ -73,6 +73,8 @@
 #+begin_src emacs-lisp
   (global-set-key (kbd "<f1>") 'previous-buffer)
   (global-set-key (kbd "<f2>") 'next-buffer)
+  (global-set-key (kbd "M-i") 'previous-buffer)
+  (global-set-key (kbd "M-p") 'next-buffer)
 #+end_src
 ** electric buffer list
 #+begin_src emacs-lisp
