@@ -93,6 +93,15 @@
   (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP")
 #+end_src
 * some packages
+** avy
+#+begin_src emacs-lisp
+  (use-package avy)
+
+  (setq avy-timeout-seconds 0.3)		; this feels a bit short
+  (global-set-key (kbd "M-j") 'avy-goto-char-timer)
+
+  (global-set-key (kbd "M-l") 'avy-goto-line)
+#+end_src
 #+begin_src emacs-lisp
   (use-package magit)
 
