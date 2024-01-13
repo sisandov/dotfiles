@@ -88,6 +88,10 @@
 #+begin_src emacs-lisp
   (add-hook 'ruby-mode-hook 'display-line-numbers-mode)
 #+end_src
+* japanese text
+#+begin_src emacs-lisp
+  (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP")
+#+end_src
 * some packages
 #+begin_src emacs-lisp
   (use-package magit)
