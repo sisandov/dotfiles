@@ -84,10 +84,6 @@
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-M-<") (lambda () (interactive) (diff-buffer-with-file)))
 #+end_src
-* language hooks
-#+begin_src emacs-lisp
-  (add-hook 'ruby-mode-hook 'display-line-numbers-mode)
-#+end_src
 * japanese text
 #+begin_src emacs-lisp
   (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP")
@@ -100,7 +96,11 @@
   (setq avy-timeout-seconds 0.3)		; this feels a bit short
   (global-set-key (kbd "M-j") 'avy-goto-char-timer)
 
-  (global-set-key (kbd "M-l") 'avy-goto-line)
+  (global-set-key (kbd "M-l") 'avy-goto-line) ; not very useful
+#+end_src
+** ruby-end
+#+begin_src emacs-lisp
+  (use-package ruby-end)
 #+end_src
 #+begin_src emacs-lisp
   (use-package magit)
