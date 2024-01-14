@@ -116,4 +116,11 @@
   (global-aggressive-indent-mode 1)
 
   (use-package nov)
+
+  (use-package electric-operator)
+#+end_src
+* language hooks
+#+begin_src emacs-lisp
+  (add-hook 'ruby-mode-hook 'display-line-numbers-mode)
+  (add-hook 'ruby-mode-hook 'electric-operator-mode)
 #+end_src
