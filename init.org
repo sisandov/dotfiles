@@ -37,6 +37,16 @@
   (setq dired-kill-when-opening-new-dired-buffer t)
   (icomplete-vertical-mode)
 #+end_src
+** sensible defaults
+#+begin_src emacs-lisp
+  (setq mouse-yank-at-point t)
+  (global-auto-revert-mode t)
+  (fset 'yes-or-no-p 'y-or-n-p)
+  (setq initial-scratch-message nil)
+  (setq require-final-newline t)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (setq default-directory "~/")
+#+end_src
 * custom functions
 ** select entire text block
 #+begin_src emacs-lisp
@@ -118,6 +128,9 @@
   (use-package nov)
 
   (use-package electric-operator)
+
+  (use-package rg
+    :config (rg-enable-menu))
 #+end_src
 * language hooks
 #+begin_src emacs-lisp
