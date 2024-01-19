@@ -46,6 +46,7 @@
   (setq require-final-newline t)
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (setq default-directory "~/")
+  (setq help-window-select t)
 #+end_src
 * custom functions
 ** select entire text block
@@ -111,6 +112,16 @@
 ** ruby-end
 #+begin_src emacs-lisp
   (use-package ruby-end)
+#+end_src
+** expand region
+#+begin_src emacs-lisp
+  (use-package expand-region)
+  (global-set-key (kbd "C-,") 'er/expand-region)
+#+end_src
+** easy-kill
+#+begin_src emacs-lisp
+  (use-package easy-kill)
+  (global-set-key (kbd "C-;") 'easy-kill)
 #+end_src
 #+begin_src emacs-lisp
   (use-package magit)
