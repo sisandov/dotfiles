@@ -39,6 +39,7 @@
   (setq echo-keystrokes 0.01)
   (setq window-resize-pixelwise t
 	frame-resize-pixelwise t)
+  (auto-image-file-mode t)
 #+end_src
 ** sensible defaults
 #+begin_src emacs-lisp
@@ -122,6 +123,7 @@
   (use-package tree-sitter)
   (use-package tree-sitter-langs)
   (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 #+end_src
 ** marginalia
 #+begin_src emacs-lisp
@@ -147,6 +149,7 @@
 ** expand region
 #+begin_src emacs-lisp
   (use-package expand-region)
+  (define-key org-mode-map (kbd "C-,") nil)
   (global-set-key (kbd "C-,") 'er/expand-region)
 #+end_src
 ** easy-kill
