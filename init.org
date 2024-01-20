@@ -107,10 +107,15 @@
 #+begin_src emacs-lisp
   (use-package avy)
 
-  (setq avy-timeout-seconds 0.3)		; this feels a bit short
+  (setq avy-timeout-seconds 0.2)
   (global-set-key (kbd "M-j") 'avy-goto-char-timer)
 
   (global-set-key (kbd "M-l") 'avy-goto-line) ; not very useful
+#+end_src
+** writeroom-mode
+#+begin_src emacs-lisp
+  (use-package writeroom-mode
+    :bind ("C-M-`" . writeroom-mode))
 #+end_src
 ** tree-sitter
 #+begin_src emacs-lisp
