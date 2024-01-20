@@ -27,7 +27,7 @@
   (setq inhibit-startup-screen t)
   (set-fringe-mode 1)
   (use-package moe-theme)
-  (load-theme 'moe-dark t)
+;;  (load-theme 'moe-dark t)
   (set-face-attribute 'default nil :height 130)
 #+end_src
 * QOL
