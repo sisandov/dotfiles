@@ -112,6 +112,12 @@
 
   (global-set-key (kbd "M-l") 'avy-goto-line) ; not very useful
 #+end_src
+** tree-sitter
+#+begin_src emacs-lisp
+  (use-package tree-sitter)
+  (use-package tree-sitter-langs)
+  (global-tree-sitter-mode)
+#+end_src
 ** marginalia
 #+begin_src emacs-lisp
   (use-package marginalia
