@@ -27,8 +27,12 @@
   (setq inhibit-startup-screen t)
   (set-fringe-mode 1)
   (use-package moe-theme)
-;;  (load-theme 'moe-dark t)
+  (load-theme 'moe-light t)
   (set-face-attribute 'default nil :height 130)
+  ;; alternative theme
+  ;; (use-package color-theme-sanityinc-tomorrow
+  ;;   :config
+  ;;   (load-theme 'sanityinc-tomorrow-day t))
 #+end_src
 * QOL
 #+begin_src emacs-lisp
