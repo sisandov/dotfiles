@@ -115,6 +115,12 @@
 ** tree-sitter
 #+begin_src emacs-lisp
   (use-package tree-sitter)
+  (use-package treesit-auto
+    :custom
+    (treesit-auto-install 'prompt)
+    :config
+    (treesit-auto-add-to-auto-mode-alist 'all)
+    (global-treesit-auto-mode))
   (use-package tree-sitter-langs)
   (global-tree-sitter-mode)
 #+end_src
@@ -170,7 +176,13 @@
     :config (rg-enable-menu))
 #+end_src
 * language hooks
+** ruby
 #+begin_src emacs-lisp
   (add-hook 'ruby-mode-hook 'display-line-numbers-mode)
   (add-hook 'ruby-mode-hook 'electric-operator-mode)
+#+end_src
+** c
+#+begin_src emacs-lisp
+  (setq c-ts-mode-indent-offset 8)
+  (setq c-ts-mode-indent-style 'linux)
 #+end_src
