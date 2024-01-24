@@ -48,8 +48,15 @@
   (setq initial-scratch-message nil)
   (setq require-final-newline t)
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  (setq default-directory "~/")
+  ;; (setq default-directory "~/")
   (setq help-window-select t)
+#+end_src
+** window resizing
+#+begin_src emacs-lisp
+  (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+  (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+  (global-set-key (kbd "S-C-<down>") 'shrink-window)
+  (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 #+end_src
 * custom functions
 ** select entire text block
