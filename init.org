@@ -27,12 +27,9 @@
   (setq inhibit-startup-screen t)
   (set-fringe-mode 1)
   (use-package moe-theme)
-  (load-theme 'moe-light t)
-  (set-face-attribute 'default nil :height 130)
-  ;; alternative theme
-  ;; (use-package color-theme-sanityinc-tomorrow
-  ;;   :config
-  ;;   (load-theme 'sanityinc-tomorrow-day t))
+  (use-package badwolf-theme)
+  (load-theme 'badwolf t)
+  (set-face-attribute 'default nil :height 120)
 #+end_src
 * QOL
 #+begin_src emacs-lisp
@@ -52,9 +49,16 @@
   (fset 'yes-or-no-p 'y-or-n-p)
   (setq initial-scratch-message nil)
   (setq require-final-newline t)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  (setq default-directory "~/")
+  ;; (remove-hook 'before-save-hook 'delete-trailing-whitespace nil)
+  ;; (setq default-directory "~/")
   (setq help-window-select t)
+#+end_src
+** window resizing
+#+begin_src emacs-lisp
+  (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+  (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+  (global-set-key (kbd "S-C-<down>") 'shrink-window)
+  (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 #+end_src
 * custom functions
 ** select entire text block
@@ -125,6 +129,12 @@
 ** tree-sitter
 #+begin_src emacs-lisp
   (use-package tree-sitter)
+  (use-package treesit-auto
+    :custom
+    (treesit-auto-install 'prompt)
+    :config
+    (treesit-auto-add-to-auto-mode-alist 'all)
+    (global-treesit-auto-mode))
   (use-package tree-sitter-langs)
   (use-package treesit-auto
     :config
