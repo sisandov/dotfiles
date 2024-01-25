@@ -48,7 +48,7 @@
   (fset 'yes-or-no-p 'y-or-n-p)
   (setq initial-scratch-message nil)
   (setq require-final-newline t)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  ;; (remove-hook 'before-save-hook 'delete-trailing-whitespace nil)
   ;; (setq default-directory "~/")
   (setq help-window-select t)
 #+end_src
