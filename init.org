@@ -39,8 +39,9 @@
   (icomplete-vertical-mode)
   (setq echo-keystrokes 0.01)
   (setq window-resize-pixelwise t
-	frame-resize-pixelwise t)
+        frame-resize-pixelwise t)
   (auto-image-file-mode t)
+  (global-unset-key (kbd "C-x C-u"))
 #+end_src
 ** sensible defaults
 #+begin_src emacs-lisp
