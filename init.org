@@ -1,10 +1,12 @@
 * repositories, packages
 #+begin_src emacs-lisp
+  (add-to-list 'load-path "~/.emacs.d/modus-themes")
+  
   (require 'package)
 
   (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			   ("org" . "https://orgmode.org/elpa/")
-			   ("elpa" . "https://elpa.gnu.org/packages/")))
+                           ("org" . "https://orgmode.org/elpa/")
+                           ("elpa" . "https://elpa.gnu.org/packages/")))
 
   (package-initialize)
   (unless package-archive-contents
@@ -20,16 +22,36 @@
 
 #+end_src
 * appearence
+** general
 #+begin_src emacs-lisp
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
   (setq inhibit-startup-screen t)
-  (set-fringe-mode 1)
+  (set-fringe-mode 0)
   (use-package moe-theme)
   (use-package badwolf-theme)
-  (load-theme 'badwolf t)
-  (set-face-attribute 'default nil :height 120)
+  ;; (load-theme 'badwolf t)
+  ;; (set-face-attribute 'default nil :height 120)
+#+end_src
+** modus-themes
+#+begin_src emacs-lisp
+  (require 'modus-themes)
+  (setq cyan "#20B2AA")
+  (setq cyan-bright "#00CCCC")
+  (setq magenta "#FF1493")
+  (setq modus-vivendi-palette-overrides
+        '(;; (bg-main "#000000")
+          (fg-main "#C6C6C4")
+          (bg-main "#10100E")
+          (bg-mode-line-active "#00CCCC")
+          (fg-mode-line-active bg-main)
+          ))
+
+  (load-theme 'modus-vivendi :no-confirm)
+  (set-face-attribute 'mode-line nil :box nil)
+  (set-face-attribute 'mode-line-inactive nil :box nil)
+
 #+end_src
 * QOL
 #+begin_src emacs-lisp
