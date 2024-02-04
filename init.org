@@ -44,11 +44,11 @@
         '(;; (bg-main "#000000")
           (fg-main "#C6C6C4")
           (bg-main "#10100E")
-          (bg-mode-line-active "#00CCCC")
-          (fg-mode-line-active bg-main)
+          (fg-mode-line-active f)
+          (bg-mode-line-active bg-main)
           ))
-
   (load-theme 'modus-vivendi :no-confirm)
+  (set-face-foreground 'vertical-border "#10100E")
   (set-face-attribute 'mode-line nil :box nil)
   (set-face-attribute 'mode-line-inactive nil :box nil)
 
