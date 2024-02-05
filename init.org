@@ -136,6 +136,11 @@
   (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP")
 #+end_src
 * some packages
+** web-mode
+#+begin_src emacs-lisp
+  (use-package web-mode)
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+#+end_src
 ** avy
 #+begin_src emacs-lisp
   (use-package avy)
