@@ -140,6 +140,36 @@
   (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP")
 #+end_src
 * some packages
+** straight
+#+begin_src emacs-lisp
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+         (expand-file-name
+          "straight/repos/straight.el/bootstrap.el"
+          (or (bound-and-true-p straight-base-dir)
+              user-emacs-directory)))
+        (bootstrap-version 7))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+          (url-retrieve-synchronously
+           "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+           'silent 'inhibit-cookies)
+        (goto-char (point-max))
+        (eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+  (setq package-enable-at-startup nil)
+#+end_src
+** LSP
+#+begin_src emacs-lisp :noexport yes
+  (use-package markdown-mode)
+  (use-package yasnippet)
+  (use-package lsp-bridge
+  :straight '(lsp-bridge :type git :host github :repo "manateelazycat/lsp-bridge"
+            :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
+            :build (:not compile))
+  :init
+  (global-lsp-bridge-mode))
+#+end_src
 ** web-mode
 #+begin_src emacs-lisp
   (use-package web-mode)
