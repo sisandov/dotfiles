@@ -66,6 +66,8 @@
         frame-resize-pixelwise t)
   (auto-image-file-mode t)
   (global-unset-key (kbd "C-x C-u"))
+  (set-default 'truncate-lines t)
+  (setq kill-whole-line t)
 #+end_src
 ** sensible defaults
 #+begin_src emacs-lisp
