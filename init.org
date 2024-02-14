@@ -35,8 +35,8 @@
   ;; (set-face-attribute 'default nil :height 120)
   (set-face-attribute 'default nil :height 95)
 #+end_src
-** modus-themes
-#+begin_src emacs-lisp
+** modus-themes dark
+#+begin_src unknown
   (require 'modus-themes)
   (setq cyan "#20B2AA")
   (setq cyan-bright "#00CCCC")
@@ -54,8 +54,29 @@
   (set-face-foreground 'vertical-border "#000000")
   (set-face-attribute 'mode-line nil :box nil)
   (set-face-attribute 'mode-line-inactive nil :box nil)
-
 #+end_src
+
+** modus-themes light
+#+begin_src emacs-lisp
+  (require 'modus-themes)
+  (setq cyan "#20B2AA")
+  (setq cyan-bright "#00CCCC")
+  (setq magenta "#FF1493")
+  (setq modus-operandi-palette-overrides
+        '(;; (bg-main "#000000")
+          (fg-main "#3c3836")
+          (bg-main "#fbf1c7")
+          (fg-mode-line-active bg-main)
+          (bg-mode-line-active "#3c3836")
+          (fg-mode-line-inactive f)
+          (bg-mode-line-inactive bg-main)
+          ))
+  (load-theme 'modus-operandi :no-confirm)
+  (set-face-foreground 'vertical-border "#000000")
+  (set-face-attribute 'mode-line nil :box nil)
+  (set-face-attribute 'mode-line-inactive nil :box nil)
+#+end_src
+
 * QOL
 #+begin_src emacs-lisp
   (setq dired-listing-switches "-aBhl --group-directories-first")
