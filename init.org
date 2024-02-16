@@ -56,23 +56,60 @@
   (set-face-attribute 'mode-line-inactive nil :box nil)
 #+end_src
 
-** modus-themes light
-#+begin_src emacs-lisp
+** modus-themes gruvbox_light
+#+begin_src unknown
   (require 'modus-themes)
-  (setq cyan "#20B2AA")
-  (setq cyan-bright "#00CCCC")
-  (setq magenta "#FF1493")
+  (setq fore "#3c3836")
+  (setq back "#fbf1c7")
   (setq modus-operandi-palette-overrides
         '(;; (bg-main "#000000")
           (fg-main "#3c3836")
           (bg-main "#fbf1c7")
           (fg-mode-line-active bg-main)
-          (bg-mode-line-active "#3c3836")
+          (bg-mode-line-active fore)
           (fg-mode-line-inactive f)
           (bg-mode-line-inactive bg-main)
           ))
   (load-theme 'modus-operandi :no-confirm)
-  (set-face-foreground 'vertical-border "#000000")
+  (set-face-foreground 'vertical-border "#3c3836")
+  (set-face-attribute 'mode-line nil :box nil)
+  (set-face-attribute 'mode-line-inactive nil :box nil)
+#+end_src
+** modus-themes everforest_light
+#+begin_src unknown
+  (require 'modus-themes)
+  (setq fore "#5c6a72")
+  (setq back "#fdf6e3")
+  (setq modus-operandi-palette-overrides
+        '(;; (bg-main "#000000")
+          (fg-main "#5c6a72")
+          (bg-main "#fdf6e3")
+          (fg-mode-line-active bg-main)
+          (bg-mode-line-active fg-main)
+          (fg-mode-line-inactive f)
+          (bg-mode-line-inactive bg-main)
+          ))
+  (load-theme 'modus-operandi :no-confirm)
+  (set-face-foreground 'vertical-border "#5c6a72")
+  (set-face-attribute 'mode-line nil :box nil)
+  (set-face-attribute 'mode-line-inactive nil :box nil)
+#+end_src
+** modus-themes rose-pine-dawn
+#+begin_src emacs-lisp
+  (require 'modus-themes)
+  (setq fore "#575279")
+  (setq back "#faf4ed")
+  (setq modus-operandi-palette-overrides
+        '(;; (bg-main "#000000")
+          (fg-main "#575279")
+          (bg-main "#faf4ed")
+          (fg-mode-line-active bg-main)
+          (bg-mode-line-active fg-main)
+          (fg-mode-line-inactive f)
+          (bg-mode-line-inactive bg-main)
+          ))
+  (load-theme 'modus-operandi :no-confirm)
+  (set-face-foreground 'vertical-border "#575279")
   (set-face-attribute 'mode-line nil :box nil)
   (set-face-attribute 'mode-line-inactive nil :box nil)
 #+end_src
@@ -182,15 +219,11 @@
   (setq package-enable-at-startup nil)
 #+end_src
 ** LSP
-#+begin_src emacs-lisp :noexport yes
-  (use-package markdown-mode)
-  (use-package yasnippet)
-  (use-package lsp-bridge
-  :straight '(lsp-bridge :type git :host github :repo "manateelazycat/lsp-bridge"
-            :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
-            :build (:not compile))
-  :init
-  (global-lsp-bridge-mode))
+#+begin_src emacs-lisp
+  (use-package corfu)
+  (global-corfu-mode)
+  (setq tab-always-indent 'complete)
+
 #+end_src
 ** web-mode
 #+begin_src emacs-lisp
