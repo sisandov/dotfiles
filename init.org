@@ -33,87 +33,17 @@
   (use-package badwolf-theme)
   ;; (load-theme 'badwolf t)
   ;; (set-face-attribute 'default nil :height 120)
-  (set-face-attribute 'default nil :height 95)
+  ;; (set-face-attribute 'default nil :height 150)
 #+end_src
-** modus-themes dark
-#+begin_src unknown
-  (require 'modus-themes)
-  (setq cyan "#20B2AA")
-  (setq cyan-bright "#00CCCC")
-  (setq magenta "#FF1493")
-  (setq modus-vivendi-palette-overrides
-        '(;; (bg-main "#000000")
-          (fg-main "#C6C6C4")
-          (bg-main "#000000")
-          (fg-mode-line-active bg-main)
-          (bg-mode-line-active cyan)
-          (fg-mode-line-inactive f)
-          (bg-mode-line-inactive bg-main)
-          ))
-  (load-theme 'modus-vivendi :no-confirm)
-  (set-face-foreground 'vertical-border "#000000")
-  (set-face-attribute 'mode-line nil :box nil)
-  (set-face-attribute 'mode-line-inactive nil :box nil)
-#+end_src
-
-** modus-themes gruvbox_light
-#+begin_src unknown
-  (require 'modus-themes)
-  (setq fore "#3c3836")
-  (setq back "#fbf1c7")
-  (setq modus-operandi-palette-overrides
-        '(;; (bg-main "#000000")
-          (fg-main "#3c3836")
-          (bg-main "#fbf1c7")
-          (fg-mode-line-active bg-main)
-          (bg-mode-line-active fore)
-          (fg-mode-line-inactive f)
-          (bg-mode-line-inactive bg-main)
-          ))
-  (load-theme 'modus-operandi :no-confirm)
-  (set-face-foreground 'vertical-border "#3c3836")
-  (set-face-attribute 'mode-line nil :box nil)
-  (set-face-attribute 'mode-line-inactive nil :box nil)
-#+end_src
-** modus-themes everforest_light
-#+begin_src unknown
-  (require 'modus-themes)
-  (setq fore "#5c6a72")
-  (setq back "#fdf6e3")
-  (setq modus-operandi-palette-overrides
-        '(;; (bg-main "#000000")
-          (fg-main "#5c6a72")
-          (bg-main "#fdf6e3")
-          (fg-mode-line-active bg-main)
-          (bg-mode-line-active fg-main)
-          (fg-mode-line-inactive f)
-          (bg-mode-line-inactive bg-main)
-          ))
-  (load-theme 'modus-operandi :no-confirm)
-  (set-face-foreground 'vertical-border "#5c6a72")
-  (set-face-attribute 'mode-line nil :box nil)
-  (set-face-attribute 'mode-line-inactive nil :box nil)
-#+end_src
-** modus-themes rose-pine-dawn
+** modus-theme
 #+begin_src emacs-lisp
-  (require 'modus-themes)
-  (setq fore "#575279")
-  (setq back "#faf4ed")
-  (setq modus-operandi-palette-overrides
-        '(;; (bg-main "#000000")
-          (fg-main "#575279")
-          (bg-main "#faf4ed")
-          (fg-mode-line-active bg-main)
-          (bg-mode-line-active fg-main)
-          (fg-mode-line-inactive f)
-          (bg-mode-line-inactive bg-main)
-          ))
-  (load-theme 'modus-operandi :no-confirm)
-  (set-face-foreground 'vertical-border "#575279")
-  (set-face-attribute 'mode-line nil :box nil)
-  (set-face-attribute 'mode-line-inactive nil :box nil)
+  ;; (load "~/dotfiles/papertheme.el")
+  (load "~/dotfiles/rose-pine-dawn.el")
+  ;; (load "~/dotfiles/gruvbox-light.el")
+  ;; (load "~/dotfiles/github-light-tritanopia.el")
+  ;; (load "~/dotfiles/everforest-light.el")
+  ;; (load "~/dotfiles/modus-vivendi-dark.el")
 #+end_src
-
 * QOL
 #+begin_src emacs-lisp
   (setq dired-listing-switches "-aBhl --group-directories-first")
