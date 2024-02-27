@@ -213,6 +213,7 @@
 #+end_src
 ** tree-sitter
 #+begin_src emacs-lisp
+  (customize-set-variable 'treesit-font-lock-level 4)
   (use-package tree-sitter)
   (use-package treesit-auto
     :custom
