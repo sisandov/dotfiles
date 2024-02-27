@@ -33,7 +33,9 @@
   (use-package badwolf-theme)
   ;; (load-theme 'badwolf t)
   ;; (set-face-attribute 'default nil :height 120)
-  ;; (set-face-attribute 'default nil :height 150)
+  ;; (set-face-attribute 'default nil :height 89)
+  (set-frame-font "Unifont" nil t)
+  (set-face-attribute 'default nil :height 110)
 #+end_src
 ** modus-theme
 #+begin_src emacs-lisp
