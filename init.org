@@ -52,7 +52,7 @@
   (setq dired-listing-switches "-aBhl --group-directories-first")
   (setq visible-bell t)
   (setq dired-kill-when-opening-new-dired-buffer t)
-  (icomplete-vertical-mode)
+  ;; (icomplete-vertical-mode)
   (setq echo-keystrokes 0.01)
   (setq window-resize-pixelwise t
         frame-resize-pixelwise t)
