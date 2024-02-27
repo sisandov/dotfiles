@@ -40,7 +40,8 @@
 ** modus-theme
 #+begin_src emacs-lisp
   ;; (load "~/dotfiles/papertheme.el")
-  (load "~/dotfiles/rose-pine-dawn.el")
+  ;; (load "~/dotfiles/rose-pine-dawn.el")
+  (load "~/dotfiles/ayu-light.el")
   ;; (load "~/dotfiles/gruvbox-light.el")
   ;; (load "~/dotfiles/github-light-tritanopia.el")
   ;; (load "~/dotfiles/everforest-light.el")
