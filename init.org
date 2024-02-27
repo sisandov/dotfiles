@@ -251,9 +251,9 @@
 #+end_src
 ** expand region
 #+begin_src emacs-lisp
-  (use-package expand-region)
+  (use-package expreg)
   (define-key org-mode-map (kbd "C-,") nil)
-  (global-set-key (kbd "C-,") 'er/expand-region)
+  (global-set-key (kbd "C-,") 'expreg-expand)
 #+end_src
 ** easy-kill
 #+begin_src emacs-lisp
