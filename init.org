@@ -132,6 +132,17 @@
   (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP")
 #+end_src
 * some packages
+** orderless
+#+begin_src emacs-lisp
+  (use-package orderless
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
+  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+#+end_src
 ** straight
 #+begin_src emacs-lisp
   (defvar bootstrap-version)
